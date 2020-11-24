@@ -214,12 +214,14 @@ public class GraphicsDisplay extends JPanel {
 
     protected boolean isPosledovatelno (Double[] point) {
         int valueFuncInt = point[1].intValue();
-        int sum = 0;
+        int a = 0;
         while(valueFuncInt > 0) {
-            sum += valueFuncInt % 10;
-            valueFuncInt /= 10;
+            StringBuffer numberStr = new StringBuffer(String.valueOf((int) valueFuncInt));
+
+            a = Integer.parseInt(String.valueOf(numberStr));
+
         }
-        return sum < 10 ? false : true;
+        return (a % 2 == 0)? true : false;
     }
 
     // Отображение маркеров точек, по которым рисовался график
