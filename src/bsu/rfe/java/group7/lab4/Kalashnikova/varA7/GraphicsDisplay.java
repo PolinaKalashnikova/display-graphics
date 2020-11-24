@@ -283,7 +283,7 @@ public class GraphicsDisplay extends JPanel {
                     (float) (labelPos.getY() - bounds.getY()));
         }
         // Определить, должна ли быть видна ось X на графике
-        if (minY < 0.0 && maxY >= 0.0) {
+        if (minY <= 0.0 && maxY >= 0.0) {
             // Она должна быть видна, если верхняя граница показываемой области (maxX) >= 0.0,
             // а нижняя (minY) <= 0.0
             canvas.draw(new Line2D.Double(xyToPoint(minX, 0),
@@ -310,6 +310,11 @@ public class GraphicsDisplay extends JPanel {
             // Вывести надпись в точке с вычисленными координатами
             canvas.drawString("x", (float) (labelPos.getX() -
                     bounds.getWidth() - 10), (float) (labelPos.getY() + bounds.getY()));
+
+            Point2D.Double labelPos1 = xyToPoint(0, 0);
+            // Вывести надпись в точке с вычисленными координатами
+            canvas.drawString("0", (float) labelPos1.getX() + 20,
+                    (float) (labelPos1.getY() - 20));
         }
     }
 
@@ -326,6 +331,7 @@ public class GraphicsDisplay extends JPanel {
         // Вычисляем смещение Y от точки верхней точки (maxY)
         double deltaY = maxY - y;
         return new Point2D.Double(deltaX * scale, deltaY * scale);
+
     }
 
     /* Метод-помощник, возвращающий экземпляр класса Point2D.Double
@@ -341,5 +347,4 @@ public class GraphicsDisplay extends JPanel {
         return dest;
     }
 }
-
 

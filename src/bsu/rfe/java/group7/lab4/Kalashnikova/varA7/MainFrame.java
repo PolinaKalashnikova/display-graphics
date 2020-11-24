@@ -91,15 +91,19 @@ public class MainFrame extends JFrame {
         graphicsMenu.add(showMarkersMenuItem);
         // Элемент по умолчанию включен (отмечен флажком)
         showMarkersMenuItem.setSelected(true);
+
+
         // Создать действие для элемента "Отобразить функцию «Целая часть f»"
-        Action showIntGraphicsAction = new AbstractAction("Отобразить функцию «Целая часть f»") {
-            public void actionPerformed(ActionEvent e) {
-                display.setShowIntGraphics(showIntGraphicsMenuItem.isSelected());
-            }
-        };
-        showIntGraphicsMenuItem = new JCheckBoxMenuItem(showIntGraphicsAction);
-        graphicsMenu.add(showIntGraphicsMenuItem);
-        showIntGraphicsMenuItem.setSelected(false);
+       // Action showIntGraphicsAction = new AbstractAction("Отобразить функцию «Целая часть f»") {
+           // public void actionPerformed(ActionEvent e) {
+          //      display.setShowIntGraphics(showIntGraphicsMenuItem.isSelected());
+         //   }
+       // };
+      //  showIntGraphicsMenuItem = new JCheckBoxMenuItem(showIntGraphicsAction);
+       // graphicsMenu.add(showIntGraphicsMenuItem);
+       // showIntGraphicsMenuItem.setSelected(false);
+
+
         // Зарегистрировать обработчик событий, связанных с меню "График"
         graphicsMenu.addMenuListener(new GraphicsMenuListener());
         // Установить GraphicsDisplay в цент граничной компоновки
