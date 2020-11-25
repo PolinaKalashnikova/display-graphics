@@ -311,7 +311,10 @@ public class GraphicsDisplay extends JPanel {
             canvas.drawString("x", (float) (labelPos.getX() -
                     bounds.getWidth() - 10), (float) (labelPos.getY() + bounds.getY()));
 
-
+            Point2D.Double labelPos1 = xyToPoint(0, 0);
+            // Вывести надпись в точке с вычисленными координатами
+            canvas.drawString("0", (float) labelPos1.getX() + 20,
+                    (float) (labelPos1.getY() - 20));
         }
     }
 
